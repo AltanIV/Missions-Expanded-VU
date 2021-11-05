@@ -44,6 +44,7 @@ the_two_sicilies_missions_1 = {
 				area = apulia_area
 				area = calabria_area
 				area = sicily_area
+				area = western_sicily_area
 			}
 			OR = {
 				trade_goods = grain
@@ -73,6 +74,7 @@ the_two_sicilies_missions_1 = {
 						area = apulia_area
 						area = calabria_area
 						area = sicily_area
+						area = western_sicily_area
 					}
 					OR = {
 						trade_goods = grain
@@ -96,6 +98,7 @@ the_two_sicilies_missions_1 = {
 						area = apulia_area
 						area = calabria_area
 						area = sicily_area
+						area = western_sicily_area
 					}
 					OR = {
 						trade_goods = grain
@@ -128,6 +131,7 @@ the_two_sicilies_missions_1 = {
 							area = apulia_area
 							area = calabria_area
 							area = sicily_area
+							area = western_sicily_area
 						}
 						trade_goods = livestock
 					}
@@ -156,6 +160,7 @@ the_two_sicilies_missions_1 = {
 									area = apulia_area
 									area = calabria_area
 									area = sicily_area
+									area = western_sicily_area
 								}
 								OR = {
 									trade_goods = grain
@@ -207,6 +212,7 @@ the_two_sicilies_missions_1 = {
 									area = apulia_area
 									area = calabria_area
 									area = sicily_area
+									area = western_sicily_area
 								}
 								OR = {
 									trade_goods = grain
@@ -510,6 +516,7 @@ the_two_sicilies_missions_2 = {
 				area = apulia_area
 				area = calabria_area
 				area = sicily_area
+				area = western_sicily_area
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -527,6 +534,7 @@ the_two_sicilies_missions_2 = {
 					area = apulia_area
 					area = calabria_area
 					area = sicily_area
+					area = western_sicily_area
 				}
 				has_manpower_building_trigger = yes
 				has_forcelimit_building_trigger = yes
@@ -555,6 +563,7 @@ the_two_sicilies_missions_2 = {
 							area = apulia_area
 							area = calabria_area
 							area = sicily_area
+							area = western_sicily_area
 						}
 						OR = {
 							has_building = barracks
@@ -672,6 +681,7 @@ the_two_sicilies_missions_3 = {
 			OR = {
 				area = apulia_area
 				area = calabria_area
+				area = western_sicily_area
 				area = sicily_area
 				area = naples_area
 			}
@@ -695,6 +705,18 @@ the_two_sicilies_missions_3 = {
 				}
 			}
 			calabria_area = {
+				type = all
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					prosperity = 50
+				}
+				else = {
+					devastation = 0
+				}
+			}
+			western_sicily_area = {
 				type = all
 				if = {
 					limit = {
@@ -825,6 +847,7 @@ the_two_sicilies_missions_4 = {
 				area = apulia_area
 				area = calabria_area
 				area = sicily_area
+				area = western_sicily_area
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -842,6 +865,7 @@ the_two_sicilies_missions_4 = {
 					area = apulia_area
 					area = calabria_area
 					area = sicily_area
+					area = western_sicily_area
 				}
 				has_dock_building_trigger = yes
 				has_shipyard_building_trigger = yes
@@ -870,6 +894,7 @@ the_two_sicilies_missions_4 = {
 							area = apulia_area
 							area = calabria_area
 							area = sicily_area
+							area = western_sicily_area
 						}
 						OR = {
 							has_building = dock
@@ -1073,7 +1098,10 @@ the_two_sicilies_missions_5 = {
 		position = 11
 		required_missions = { tts_dream_ruggero }
 		provinces_to_highlight = {
-			area = sicily_area
+			OR = {
+				area = sicily_area
+				area = western_sicily_area
+			}
 			OR = {
 				NOT = { owned_by = ROOT }
 				NOT = { base_production = 10 }
@@ -1083,7 +1111,10 @@ the_two_sicilies_missions_5 = {
 		}
 		trigger = {
 			any_owned_province = {
-				area = sicily_area
+				OR = {
+					area = sicily_area
+					area = western_sicily_area
+				}
 				base_production = 10
 				has_manufactory_trigger = yes
 				has_production_building_trigger = yes
@@ -1091,6 +1122,12 @@ the_two_sicilies_missions_5 = {
 		}
 		effect = {
 			sicily_area = {
+				add_permanent_province_modifier = {
+					name = tts_tonnara_siciliana
+					duration = -1
+				}
+			}
+			western_sicily_area = {
 				add_permanent_province_modifier = {
 					name = tts_tonnara_siciliana
 					duration = -1

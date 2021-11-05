@@ -111,7 +111,7 @@ mnd_mlc_1 = {
 					}
 					add_permanent_claim = ROOT
 				}
-				kedah_area = {
+				north_malaya_area = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { is_permanent_claim = ROOT }
@@ -127,7 +127,7 @@ mnd_mlc_1 = {
 		provinces_to_highlight = {
 			OR = {
 				area = malaya_area
-				area = kedah_area
+				area = north_malaya_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -136,7 +136,7 @@ mnd_mlc_1 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			kedah_area = {
+			north_malaya_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -196,7 +196,7 @@ mnd_mlc_1 = {
 				}
 			}
 			else = {
-				palembang_area = {
+				jambi_area = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { is_permanent_claim = ROOT }
@@ -232,12 +232,12 @@ mnd_mlc_1 = {
 		required_missions = { mnd_mlc_show_of_force }
 		provinces_to_highlight = {
 			OR = {
-				area = palembang_area
+				area = jambi_area
 				area = central_sumatra_area
 			}			
 		}
 		trigger = {
-			palembang_area = {
+			jambi_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT 
 			}
@@ -585,7 +585,7 @@ mnd_mlc_2 = {
 				name = mlc_subjects
 				duration = -1
 			}
-			central_java_area = {
+			surabaya_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -604,7 +604,7 @@ mnd_mlc_2 = {
 		}
 		trigger = {
 			NOT = { exists = MAJ }
-			central_java_area = {
+			surabaya_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}

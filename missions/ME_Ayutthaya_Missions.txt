@@ -195,6 +195,20 @@ AYU_missions_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			champasak_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			vientiane_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			add_country_modifier = {
 				name = "AYU_glorious_conquest"
 				duration = 9125
@@ -240,7 +254,7 @@ AYU_missions_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			8580 = {
+			angkor_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -262,7 +276,7 @@ AYU_missions_3 = {
 			OR = {
 				area = mekong_area
 				area = cambodia_area
-				province_id = 8580
+				area = angkor_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -275,7 +289,8 @@ AYU_missions_3 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			8580 = {
+			angkor_area = {
+				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
@@ -294,7 +309,7 @@ AYU_missions_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			degar_highlands_area = {
+			tay_nguyen_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -308,12 +323,6 @@ AYU_missions_3 = {
 				}
 			}
 			cambodia_area = {
-				add_province_modifier = {
-					name = AYU_centralization
-					duration = 9125
-				}
-			}
-			8580 = {
 				add_province_modifier = {
 					name = AYU_centralization
 					duration = 9125
@@ -368,7 +377,7 @@ AYU_missions_4 = {
 		provinces_to_highlight = {
 			OR = {
 				area = champa_area
-				area = degar_highlands_area
+				area = tay_nguyen_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -377,7 +386,7 @@ AYU_missions_4 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			degar_highlands_area = {
+			tay_nguyen_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -429,7 +438,7 @@ AYU_missions_4 = {
 			add_adm_power = 100
 			add_dip_power = 100
 			add_mil_power = 100
-			borneo_region = {
+			brunei_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -444,11 +453,11 @@ AYU_missions_4 = {
 		required_missions = { AYU_strait }
 		position = 6
 		provinces_to_highlight = {
-			region = borneo_region
+			area = brunei_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			borneo_region = {
+			brunei_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -518,14 +527,14 @@ AYU_missions_5 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			kedah_area= {
+			north_malaya_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
-			indonesian_islands_area = {
+			johor_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -544,8 +553,8 @@ AYU_missions_5 = {
 				area = tenasserim_area
 				area = malaya_area
 				area = malacca_area
-				area = kedah_area
-				area = indonesian_islands_area
+				area = north_malaya_area
+				area = johor_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -562,11 +571,11 @@ AYU_missions_5 = {
 				country_or_non_sovereign_subject_holds = ROOT
 				type = all
 			}
-			kedah_area = {
+			north_malaya_area = {
 				country_or_non_sovereign_subject_holds = ROOT
 				type = all
 			}
-			indonesian_islands_area = {
+			johor_area = {
 				country_or_non_sovereign_subject_holds = ROOT
 				type = all
 			}
@@ -591,7 +600,7 @@ AYU_missions_5 = {
 		required_missions = { AYU_conquer_the_peninsula }
 		position = 5
 		trigger = {
-			1365 = {
+			1361 = {
 				is_strongest_trade_power = ROOT
 			}
 		}
@@ -611,7 +620,7 @@ AYU_missions_5 = {
 		trigger = {
 			home_trade_node = {
 				any_trade_node_member_province = {
-					province_id = 1361
+					province_id = 596
 				}
 			}
 		}
@@ -628,7 +637,7 @@ AYU_missions_5 = {
 		required_missions = { AYU_move_our_trade }
 		position = 7
 		trigger = {
-			1361 = {
+			1357 = {
 				is_strongest_trade_power = ROOT
 			}
 		}

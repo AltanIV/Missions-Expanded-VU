@@ -63,7 +63,7 @@ Circassia_Missions_2 = {
 			}
 		}
         effect = {
-			samtskhe_area = {
+			kartli_kakheti_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -155,11 +155,11 @@ Circassia_Missions_3 = {
         required_missions = { CIR_rigid_pass CIR_cross_the_caucasus }
         position = 4
 		provinces_to_highlight = {
-			area = samtskhe_area
+			area = kartli_kakheti_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
         trigger = {
-			samtskhe_area = {
+			kartli_kakheti_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}

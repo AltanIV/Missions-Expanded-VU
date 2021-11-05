@@ -6,7 +6,7 @@ bavaria_missions_1 = {
 		OR = {
 			tag = BAV
 			AND = {
-				tag = AUE #AUB doesn't exist. Suppose that was meant to be AUE
+				tag = AUB
 				primary_culture = bavarian
 			}
 		}
@@ -54,7 +54,7 @@ bavaria_missions_1 = {
 			legitimacy_equivalent = 90
 		}
 		effect = {
-			bavaria_area = {
+			upper_bavaria_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -69,11 +69,11 @@ bavaria_missions_1 = {
 		required_missions = { bavaria_prove_legitimacy }
 		position = 7
 		provinces_to_highlight = {
-			area = bavaria_area
+			area = upper_bavaria_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			bavaria_area = {
+			upper_bavaria_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -279,7 +279,7 @@ bavaria_missions_2 = {
 		OR = {
 			tag = BAV
 			AND = {
-				tag = AUE
+				tag = AUB
 				primary_culture = bavarian
 			}
 		}
@@ -336,14 +336,7 @@ bavaria_missions_2 = {
 			}
 		}
 		effect = {
-			baden_area = { #was upper_rhineland_area
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			wurttemburg_area = {
+			upper_rhineland_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -358,17 +351,11 @@ bavaria_missions_2 = {
 		required_missions = { bavaria_conquer_ulm }
 		position = 9
 		provinces_to_highlight = {
-			#area = upper_rhineland_area
-			area = baden_area
-			area = wurttemburg_area
+			area = upper_rhineland_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			baden_area= { # was upper_rhineland_area
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			wurttemburg_area = {
+			upper_rhineland_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -467,7 +454,7 @@ bavaria_missions_3_AoW = {
 		OR = {
 			tag = BAV
 			AND = {
-				tag = AUE
+				tag = AUB
 				primary_culture = bavarian
 			}
 		}
@@ -509,7 +496,7 @@ bavaria_missions_3 = {
 		OR = {
 			tag = BAV
 			AND = {
-				tag = AUE
+				tag = AUB
 				primary_culture = bavarian
 			}
 		}
@@ -759,7 +746,7 @@ bavaria_missions_4 = {
 		OR = {
 			tag = BAV
 			AND = {
-				tag = AUE
+				tag = AUB
 				primary_culture = bavarian
 			}
 		}
@@ -959,18 +946,22 @@ bavaria_missions_4 = {
 		required_missions = { bavaria_build_army_buildings bavaria_become_papal_controller bavaria_build_cathedrals }
 		position = 8
 		provinces_to_highlight = {
-			#OR = {
-			#	area = upper_bavaria_area
-			#	area = lower_bavaria_area
-			#}
-			area = bavaria_area
+			OR = {
+				area = upper_bavaria_area
+				area = lower_bavaria_area
+			}
 			OR = {
 				NOT = { country_or_non_sovereign_subject_holds = ROOT }
 				NOT = { religion = catholic }
 			}
 		}
 		trigger = {
-			bavaria_area = {
+			upper_bavaria_area = {
+				type = all
+				religion = catholic
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_bavaria_area = {
 				type = all
 				religion = catholic
 				country_or_non_sovereign_subject_holds = ROOT
@@ -1095,7 +1086,7 @@ bavaria_missions_5 = {
 		OR = {
 			tag = BAV
 			AND = {
-				tag = AUE
+				tag = AUB
 				primary_culture = bavarian
 			}
 		}

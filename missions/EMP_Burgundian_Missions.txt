@@ -255,7 +255,6 @@ emp_lotharingia_1 = {
 		has_dlc = "Emperor"
 	}
 	potential = {
-		has_country_flag = use_paradox_missions
 		tag = LOT
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Emperor"
@@ -1530,7 +1529,6 @@ emp_lotharingia_4 = {
 		has_dlc = "Emperor"
 	}
 	potential = {
-		has_country_flag = use_paradox_missions
 		tag = LOT
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Emperor"
@@ -1544,9 +1542,13 @@ emp_lotharingia_4 = {
 
 		provinces_to_highlight = {
 			OR = {
-				area = swabia_area
+				area = lower_swabia_area
+				area = upper_swabia_area
 				area = franconia_area
-				area = bavaria_area
+				area = upper_franconia_area
+				area = upper_bavaria_area
+				area = lower_bavaria_area
+				area = east_bavaria_area
 				area = tirol_area
 				area = austria_proper_area
 				area = inner_austria_area
@@ -1558,9 +1560,13 @@ emp_lotharingia_4 = {
 					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 						value = 30 #out of 45
 						OR = {
-							area = swabia_area
+							area = lower_swabia_area
+							area = upper_swabia_area
 							area = franconia_area
-							area = bavaria_area
+							area = upper_franconia_area
+							area = upper_bavaria_area
+							area = lower_bavaria_area
+							area = east_bavaria_area
 							area = tirol_area
 							area = austria_proper_area
 							area = inner_austria_area
@@ -1575,9 +1581,13 @@ emp_lotharingia_4 = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 30 #out of 45
 				OR = {
-					area = swabia_area
+					area = lower_swabia_area
+					area = upper_swabia_area
 					area = franconia_area
-					area = bavaria_area
+					area = upper_franconia_area
+					area = upper_bavaria_area
+					area = lower_bavaria_area
+					area = east_bavaria_area
 					area = tirol_area
 					area = austria_proper_area
 					area = inner_austria_area
@@ -1994,14 +2004,7 @@ emp_burgundy_5 = {
 		effect = {
 			country_event = { id = new_flavour_bur.4 }
 
-			baden_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			wurttemburg_area = {
+			upper_rhineland_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -2069,7 +2072,6 @@ emp_lotharingia_5 = {
 		has_dlc = "Emperor"
 	}
 	potential = {
-		has_country_flag = use_paradox_missions
 		tag = LOT
 		NOT = { map_setup = map_setup_random }
 		has_dlc = "Emperor"
@@ -2084,8 +2086,7 @@ emp_lotharingia_5 = {
 		provinces_to_highlight = {
 			OR = {
 				area = alsace_area
-				area = baden_area
-				area = wurttemburg_area
+				area = upper_rhineland_area
 				area = palatinate_area
 				area = hesse_area
 				area = lower_rhineland_area
@@ -2103,8 +2104,7 @@ emp_lotharingia_5 = {
 						value = 30 #out of 42
 						OR = {
 							area = alsace_area
-							area = baden_area
-							area = wurttemburg_area
+							area = upper_rhineland_area
 							area = palatinate_area
 							area = hesse_area
 							area = lower_rhineland_area
@@ -2125,8 +2125,7 @@ emp_lotharingia_5 = {
 				value = 30 #out of 42
 				OR = {
 					area = alsace_area
-					area = baden_area
-					area = wurttemburg_area
+					area = upper_rhineland_area
 					area = palatinate_area
 					area = hesse_area
 					area = lower_rhineland_area
@@ -2140,7 +2139,14 @@ emp_lotharingia_5 = {
 			}
 		}
 		effect = {
-			swabia_area = {
+			lower_swabia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_swabia_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
@@ -2154,7 +2160,28 @@ emp_lotharingia_5 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			bavaria_area = {
+			upper_franconia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_bavaria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_bavaria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_bavaria_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }

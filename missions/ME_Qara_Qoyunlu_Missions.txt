@@ -664,60 +664,21 @@ QAR_missions_5 = {
 		position = 2
 		provinces_to_highlight = {
 			OR = {
-				province_id = 4295
+				province_id = 2307
 				province_id = 4296
-				province_id = 5295
-				province_id = 5330
-				province_id = 5331
+				province_id = 4302
 			}
 			NOT = { owned_by = ROOT }
 		}
 		trigger = {
-			owns = 4295
+			owns = 2307
 			owns = 4296
-			owns = 5295
-			owns = 5330
-			owns = 5331
+			owns = 4302
 			NOT = { exists = BTL }
 		}
 		effect = {
 			add_stability_or_adm_power = yes
-			2202 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			2204 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			2306 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			3253 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			5332 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			6137 = {
+			kartli_kakheti_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -732,21 +693,14 @@ QAR_missions_5 = {
 		required_missions = { QAR_integrate_bitlis }
 		position = 3
 		provinces_to_highlight = {
-			province_id = 2202
-			province_id = 2204
-			province_id = 2306
-			province_id = 3253
-			province_id = 5332
-			province_id = 6137
+			area = kartli_kakheti_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			2202 = { country_or_non_sovereign_subject_holds = ROOT }
-			2204 = { country_or_non_sovereign_subject_holds = ROOT }
-			2306 = { country_or_non_sovereign_subject_holds = ROOT }
-			3253 = { country_or_non_sovereign_subject_holds = ROOT }
-			5332 = { country_or_non_sovereign_subject_holds = ROOT }
-			6137 = { country_or_non_sovereign_subject_holds = ROOT }
+			kartli_kakheti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
 			add_prestige = 25

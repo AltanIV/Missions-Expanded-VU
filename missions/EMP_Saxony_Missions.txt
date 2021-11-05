@@ -9,12 +9,12 @@ emp_sax_missions_conquest = {
 	}
 	potential = {
 		has_dlc = "Emperor"
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = SAX
 			tag = THU
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -140,12 +140,12 @@ emp_sax_missions_defragment_and_go_east = {
 	}
 	potential = {
 		has_dlc = "Emperor"
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = SAX
 			tag = THU
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -163,12 +163,12 @@ emp_sax_missions_defragment_and_go_east = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					area = saxony_area
+					area = northern_saxony_area
 					ROOT = {
 						NOT = {
 							num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 								value = 2
-								area = saxony_area
+								area = northern_saxony_area
 							}
 						}
 					}
@@ -190,7 +190,7 @@ emp_sax_missions_defragment_and_go_east = {
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 2
-				area = saxony_area
+				area = northern_saxony_area
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 2
@@ -327,12 +327,12 @@ emp_sax_missions_conquer_franconia = {
 	}
 	potential = {
 		has_dlc = "Emperor"
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = SAX
 			tag = THU
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -360,7 +360,7 @@ emp_sax_missions_conquer_franconia = {
 				}
 				AND = {
 					OR = {
-						area = lower_saxony_area
+						area = south_saxony_area
 						area = thuringia_area
 					}
 					OR = {
@@ -381,7 +381,7 @@ emp_sax_missions_conquer_franconia = {
 			else = {
 				NOT = { exists = SAX }
 			}
-			lower_saxony_area = {
+			south_saxony_area = {
 				type = all
 				owned_by = root
 				is_core = root
@@ -393,6 +393,13 @@ emp_sax_missions_conquer_franconia = {
 			}
 		}
 		effect = {
+			upper_franconia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			franconia_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -403,7 +410,7 @@ emp_sax_missions_conquer_franconia = {
 			if = {
 				limit = {
 					NOT = {
-						saxony_area = {
+						northern_saxony_area = {
 							type = all
 							OR = {
 								is_core = ROOT
@@ -412,7 +419,7 @@ emp_sax_missions_conquer_franconia = {
 						}
 					}
 				}
-				saxony_area = {
+				northern_saxony_area = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { is_permanent_claim = ROOT }
@@ -448,13 +455,19 @@ emp_sax_missions_conquer_franconia = {
 		position = 2
 		required_missions = { emp_sax_defragment }
 		provinces_to_highlight = {
-			area = franconia_area
+			OR = {
+				area = franconia_area
+				area = upper_franconia_area
+			}
 			NOT = { country_or_non_sovereign_subject_holds = root }
 			ROOT = {
 				NOT = {
 					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 						value = 6
-						area = franconia_area
+						OR = {
+							area = franconia_area
+							area = upper_franconia_area
+						}
 					}
 				}
 			}
@@ -462,7 +475,10 @@ emp_sax_missions_conquer_franconia = {
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 6
-				area = franconia_area
+				OR = {
+					area = franconia_area
+					area = upper_franconia_area
+				}
 			}
 		}
 		effect = {
@@ -485,12 +501,12 @@ emp_sax_missions_religion = {
 	}
 	potential = {
 		has_dlc = "Emperor"
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = SAX
 			tag = THU
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -671,12 +687,12 @@ emp_sax_missions_culture_1 = {
 	}
 	potential = {
 		has_dlc = "Emperor"
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = SAX
 			tag = THU
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -710,12 +726,12 @@ emp_sax_missions_culture_2 = {
 	}
 	potential = {
 		has_dlc = "Emperor"
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = SAX
 			tag = THU
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 		
@@ -1039,12 +1055,12 @@ emp_sax_missions_economic = {
 	}
 	potential = {
 		has_dlc = "Emperor"
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = SAX
 			tag = THU
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	

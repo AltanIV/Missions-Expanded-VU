@@ -44,15 +44,6 @@ BOS_missions_1 = {
 					add_permanent_claim = ROOT
 				}
 			}
-			7732 = {
-				if = {
-					limit = {
-						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
-			}
 		}
 	}
 	
@@ -64,7 +55,6 @@ BOS_missions_1 = {
 				area = bosnia_area
 				province_id = 136
 				province_id = 4753
-				province_id = 7732
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -75,7 +65,6 @@ BOS_missions_1 = {
 			}
 			owns = 136
 			owns = 4753
-			owns = 7732
 		}
 		effect = {
 			136 = {
@@ -95,20 +84,6 @@ BOS_missions_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			3000 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			7711 = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
 		}
 	}
 	
@@ -119,8 +94,6 @@ BOS_missions_1 = {
 			OR = {
 				area = rascia_area
 				area = serbia_area
-				province_id = 3000
-				province_id = 7711
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -129,12 +102,6 @@ BOS_missions_1 = {
 				owned_by = ROOT
 			}
 			serbia_area = {
-				owned_by = ROOT
-			}
-			3000 = {
-				owned_by = ROOT
-			}
-			7711 = {
 				owned_by = ROOT
 			}
 		}

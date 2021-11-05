@@ -444,7 +444,7 @@ BUR_missions_2 = {
 					add_permanent_claim = ROOT
 				}
 			}
-			south_east_area = {
+			home_counties_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -459,11 +459,11 @@ BUR_missions_2 = {
 		required_missions = { BUR_eng_1 }
 		position = 11
 		provinces_to_highlight = {
-			area = south_east_area
+			area = home_counties_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			south_east_area = {
+			home_counties_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -477,7 +477,7 @@ BUR_missions_2 = {
 				add_base_tax = 7
 				add_base_production = 7
 			}
-			cornwall_area = {
+			wessex_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -492,11 +492,11 @@ BUR_missions_2 = {
 		required_missions = { BUR_eng_2 }
 		position = 12
 		provinces_to_highlight = {
-			area = cornwall_area
+			area = wessex_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			cornwall_area = {
+			wessex_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}

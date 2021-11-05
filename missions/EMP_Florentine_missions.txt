@@ -13,6 +13,7 @@ emp_tusc_fighting_1 = {
 			tag = LAN
 		}
 		NOT = { map_setup = map_setup_random }
+		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -25,27 +26,19 @@ emp_tusc_fighting_1 = {
 			OR = {
 				area = lombardy_area
 				area = po_valley_area
-				province_id = 7080
-				province_id = 2979
 			}
 			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 			}
 		}
 		trigger = {
 			lombardy_area = {
 				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 			}
 			po_valley_area = {
 				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			7080 = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			2979 = {
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 			}
 		}
 		effect = {
@@ -61,6 +54,7 @@ emp_tusc_fighting_1 = {
 					NOT = { is_core = ROOT }
 					NOT = { is_permanent_claim = ROOT }
 				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -72,13 +66,13 @@ emp_tusc_fighting_1 = {
 		provinces_to_highlight = {
 			area = venetia_area
 			NOT = {
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 			}
 		}
 		trigger = {
 			venetia_area = {
 				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 			}
 		}
 		effect = {
@@ -86,21 +80,6 @@ emp_tusc_fighting_1 = {
 				name = "lan_tuscan_naval_expansion"
 				duration = 7300
 			}
-			carnia_area  = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			friuli_area  = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			
 		}
 	}
 }
@@ -120,6 +99,7 @@ emp_tusc_dip_and_war_2 = {
 			tag = LAN
 		}
 		NOT = { map_setup = map_setup_random }
+		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 
@@ -186,27 +166,6 @@ emp_tusc_dip_and_war_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			south_tuscany_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			upper_emilia_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			emilia_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
 		}
 	}
 	
@@ -218,10 +177,7 @@ emp_tusc_dip_and_war_2 = {
 		provinces_to_highlight = {
 			OR = {
 				area = tuscany_area
-				area = south_tuscany_area 
 				area = emilia_romagna_area
-				area = upper_emilia_area 
-				area = emilia_area 
 			}
 			NOT = {
 				owned_by = ROOT
@@ -230,23 +186,11 @@ emp_tusc_dip_and_war_2 = {
 		trigger = {
 			tuscany_area = {
 				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 			}
 			emilia_romagna_area = {
 				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			south_tuscany_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			upper_emilia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			emilia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+				owned_by = ROOT
 			}
 		}
 		effect = {
@@ -263,28 +207,6 @@ emp_tusc_dip_and_war_2 = {
 					NOT = { is_permanent_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
-			}
-			7080 = {
-				if = {
-					limit = {
-						NOT = {
-							is_permanent_claim = ROOT
-							is_core = ROOT
-						}
-					}
-					add_permanent_claim = ROOT
-				}
-			}
-			2979 = {
-				if = {
-					limit = {
-						NOT = {
-							is_permanent_claim = ROOT
-							is_core = ROOT
-						}
-					}
-					add_permanent_claim = ROOT
-				}
 			}
 		}
 	}
@@ -330,27 +252,6 @@ emp_tusc_dip_and_war_2 = {
 		}
 		effect = {
 			add_mercantilism = 2
-			piedmont_area   = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			south_piedmont_area   = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			north_piedmont_area   = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_permanent_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
 		}
 	}
 }
@@ -370,6 +271,7 @@ emp_tusc_government_3 = {
 			tag = LAN
 		}
 		NOT = { map_setup = map_setup_random }
+		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -584,6 +486,7 @@ emp_tusc_renaissance_4 = {
 			tag = LAN
 		}
 		NOT = { map_setup = map_setup_random }
+		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -766,6 +669,7 @@ emp_tusc_infra_5 = {
 			tag = LAN
 		}
 		NOT = { map_setup = map_setup_random }
+		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	

@@ -112,7 +112,7 @@ mnd_khmer_2 = {
 		icon = mission_mnd_khm_resurgence
 		required_missions = { mnd_khm_religion mnd_khm_restore_angkor mnd_khm_rebuild }
 		provinces_to_highlight = {
-		}
+		} 
 		trigger = {
 			stability = 2
 			legitimacy_equivalent = 90
@@ -221,7 +221,7 @@ mnd_khmer_3 = {
 			OR = {
 				area = cambodia_area
 				area = mekong_area
-				area = cambodia_area
+				area = angkor_area
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -239,7 +239,7 @@ mnd_khmer_3 = {
 				owned_by = ROOT
 				development = 10
 			}
-			cambodia_area = {
+			angkor_area = {
 				type = all
 				owned_by = ROOT
 				development = 10
@@ -426,7 +426,7 @@ mnd_khmer_3 = {
 		icon = mission_mnd_maj_rein_in_brunei
 		required_missions = { mnd_khm_subjugate_dia_viet }
 		provinces_to_highlight = {
-			area = kalimantan_area
+			area = banjar_area
 			area = brunei_area
 			area = kalimantan_area
 			area = kutai_area
@@ -439,7 +439,7 @@ mnd_khmer_3 = {
 				all_province = {
 					culture = bornean
 					OR = {
-						area = kalimantan_area
+						area = banjar_area
 						area = brunei_area
 						area = kalimantan_area
 						area = kutai_area
@@ -482,11 +482,9 @@ mnd_khmer_4 = {
 		}
 		trigger = {
 			OR = {
-				OR = {
-					AYU = {
+				AYU = {
+					OR = {
 						humiliated_by = ROOT
-					}
-					ROOT = {
 						has_pillaged_capital_against = AYU
 					}
 				}
@@ -624,11 +622,11 @@ mnd_khmer_5 = {
 		icon = mission_mnd_khm_resurgence
 		required_missions = {  }
 		provinces_to_highlight = {
-			area = south_laos_area
+			area = champasak_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			south_laos_area = {
+			champasak_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -660,7 +658,7 @@ mnd_khmer_5 = {
 					}
 					add_permanent_claim = ROOT
 				}
-				khorat_area = {
+				vientiane_area = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { is_permanent_claim = ROOT }
@@ -676,8 +674,8 @@ mnd_khmer_5 = {
 		provinces_to_highlight = {
 			OR = {
 				area = north_laos_area
-				area = south_laos_area
-				area = khorat_area
+				area = champasak_area
+				area = vientiane_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -688,8 +686,8 @@ mnd_khmer_5 = {
 					OR = {
 						area = south_laos_area
 						area = north_laos_area
-						area = south_laos_area
-						area = khorat_area
+						area = champasak_area
+						area = vientiane_area
 					}
 					country_or_non_sovereign_subject_holds = ROOT
 				}
