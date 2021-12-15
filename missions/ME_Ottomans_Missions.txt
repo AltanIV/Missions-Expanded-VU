@@ -445,28 +445,7 @@ Ottoman_Missions_1 = {
 					NOT = { is_core = ROOT } 
 				} 
 				add_permanent_claim = ROOT 
-			}
-			montenegro_area = {
-				limit = { 
-					NOT = { owned_by = ROOT } 
-					NOT = { is_core = ROOT } 
-				} 
-				add_permanent_claim = ROOT 
 			} 
-			3000 = {
-				limit = { 
-					NOT = { owned_by = ROOT } 
-					NOT = { is_core = ROOT } 
-				} 
-				add_permanent_claim = ROOT 
-			}
-			7711 = {
-				limit = { 
-					NOT = { owned_by = ROOT } 
-					NOT = { is_core = ROOT } 
-				} 
-				add_permanent_claim = ROOT 
-			}
 		} 
 	} 
  
@@ -479,10 +458,7 @@ Ottoman_Missions_1 = {
 		provinces_to_highlight = { 
 			OR = { 
 				area = rascia_area 
-				area = serbia_area
-				area = montenegro_area
-				province_id = 3000
-				province_id = 7711 
+				area = serbia_area 
 			} 
 			NOT = { country_or_non_sovereign_subject_holds = ROOT } 
 			NOT = { province_id = 4239 } 
@@ -498,20 +474,8 @@ Ottoman_Missions_1 = {
 				OR = { 
 					country_or_non_sovereign_subject_holds = ROOT 
 					province_id = 4239 
-				}
-			}
-			montenegro_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			3000 = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			7711 = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+				} 
+			} 
 		} 
 		effect = { 
 			bosnia_area = { 
@@ -1387,7 +1351,7 @@ Ottoman_Missions_3 = {
 					tradition = 75 
 				} 
 			} 
-			thrace_area = { 
+			145 = { 
 				if = { 
 					limit = { 
 						NOT = { owned_by = ROOT } 
@@ -1396,7 +1360,7 @@ Ottoman_Missions_3 = {
 					add_permanent_claim = ROOT 
 				} 
 			} 
-			northern_thrace_area = { 
+			146 = { 
 				if = { 
 					limit = { 
 						NOT = { owned_by = ROOT } 
@@ -1405,7 +1369,7 @@ Ottoman_Missions_3 = {
 					add_permanent_claim = ROOT 
 				} 
 			} 
-			morea_area = { 
+			1773 = { 
 				if = { 
 					limit = { 
 						NOT = { owned_by = ROOT } 
@@ -1414,7 +1378,7 @@ Ottoman_Missions_3 = {
 					add_permanent_claim = ROOT 
 				} 
 			} 
-			western_aegean_area = { 
+			151 = { 
 				if = { 
 					limit = { 
 						NOT = { owned_by = ROOT } 
@@ -1423,15 +1387,6 @@ Ottoman_Missions_3 = {
 					add_permanent_claim = ROOT 
 				} 
 			} 
-			aetolia_area = {
-				if = { 
-					limit = { 
-						NOT = { owned_by = ROOT } 
-						NOT = { is_core = ROOT } 
-					} 
-					add_permanent_claim = ROOT 
-				}
-			}
 		} 
 	} 
  
@@ -1482,7 +1437,7 @@ Ottoman_Missions_3 = {
 			else = { 
 				add_prestige = 10 
 			} 
-			pontus_area = { #trebizond 
+			330 = { #trebizond 
 				if = { 
 					limit = { 
 						NOT = { owned_by = ROOT } 
@@ -1500,12 +1455,12 @@ Ottoman_Missions_3 = {
 			TUR_candar 
 		} 
 		provinces_to_highlight = { 
-			area = pontus_area
+			province_id = 330 
 			NOT = { owned_by = ROOT } 
 		} 
 		position = 4 
 		trigger = { 
-			pontus_area = { 
+			330 = { 
 				owned_by = ROOT 
 			} 
 		} 
@@ -1593,13 +1548,13 @@ Ottoman_Missions_3 = {
 				} 
 				add_permanent_claim = ROOT 
 			} 
-			#kartli_kakheti_area = { 
-			#	limit = { 
-			#		NOT = { owned_by = ROOT } 
-			#		NOT = { is_core = ROOT } 
-			#	} 
-			#	add_permanent_claim = ROOT 
-			#} 
+			kartli_kakheti_area = { 
+				limit = { 
+					NOT = { owned_by = ROOT } 
+					NOT = { is_core = ROOT } 
+				} 
+				add_permanent_claim = ROOT 
+			} 
 			al_jazira_area = { 
 				limit = { 
 					NOT = { owned_by = ROOT } 
@@ -1626,7 +1581,7 @@ Ottoman_Missions_3 = {
 			OR = { 
 				area = samtskhe_area 
 				area = imereti_area 
-				#area = kartli_kakheti_area 
+				area = kartli_kakheti_area 
 			} 
 			NOT = { owned_by = ROOT } 
 		} 
@@ -1640,10 +1595,10 @@ Ottoman_Missions_3 = {
 				type = all 
 				owned_by = ROOT 
 			} 
-			#kartli_kakheti_area = { 
-			#	type = all 
-			#	owned_by = ROOT 
-			#} 
+			kartli_kakheti_area = { 
+				type = all 
+				owned_by = ROOT 
+			} 
 		} 
 		effect = { 
 			armenia_area = { 
@@ -2057,7 +2012,7 @@ Ottoman_Missions_4 = {
 				} 
 			} 
  
-			pontus_area = { #trebizond 
+			330 = { #trebizond 
 				if = { 
 					limit = { 
 						NOT = { owned_by = ROOT } 
@@ -2066,24 +2021,7 @@ Ottoman_Missions_4 = {
 					add_permanent_claim = ROOT 
 				} 
 			} 
-			1305 = {
-				if = { 
-					limit = { 
-						NOT = { owned_by = ROOT } 
-						NOT = { is_core = ROOT } 
-					} 
-					add_permanent_claim = ROOT 
-				} 
-			}
-			1846 = {
-				if = { 
-					limit = { 
-						NOT = { owned_by = ROOT } 
-						NOT = { is_core = ROOT } 
-					} 
-					add_permanent_claim = ROOT 
-				} 
-			}
+ 
 		} 
 	} 
 	TUR_ramazan = { 
@@ -2799,7 +2737,7 @@ Ottoman_Missions_5 = {
 		required_missions = {} 
 		position = 1 
 		trigger = { 
-			total_development = 1000 
+			total_development = 450 
 		} 
 		effect = { 
 			add_country_modifier = { 
@@ -2866,27 +2804,6 @@ Ottoman_Missions_5 = {
 				} 
 				add_permanent_claim = ROOT 
 			} 
-			5146 = {
-				limit = { 
-					NOT = { owned_by = ROOT } 
-					NOT = { is_core = ROOT } 
-				} 
-				add_permanent_claim = ROOT 
-			}
-			5147 = {
-				limit = { 
-					NOT = { owned_by = ROOT } 
-					NOT = { is_core = ROOT } 
-				} 
-				add_permanent_claim = ROOT 
-			}
-			5150 = {
-				limit = { 
-					NOT = { owned_by = ROOT } 
-					NOT = { is_core = ROOT } 
-				} 
-				add_permanent_claim = ROOT 
-			}
 		} 
 	} 
 	TUR_karaman = { 
@@ -2914,16 +2831,16 @@ Ottoman_Missions_5 = {
 		effect = { 
 			country_event = { id = ME_Ottoman_Events.6 } 
  
-			332 = { 
-				if = { 
-					limit = { 
-						NOT = { owned_by = ROOT } 
-						NOT = { is_core = ROOT } 
-					} 
-					add_permanent_claim = ROOT 
+			dulkadir_area = { 
+				limit = { 
+					NOT = { owned_by = ROOT } 
+					NOT = { is_core = ROOT } 
+					NOT = { province_id = 2308 } 
 				} 
+				add_permanent_claim = ROOT 
 			} 
-			cukurova_area = { #ramazan 
+ 
+			327 = { #ramazan 
 				if = { 
 					limit = { 
 						NOT = { owned_by = ROOT } 
@@ -3081,7 +2998,7 @@ Ottoman_Missions_5 = {
 				type = all 
 				owned_by = ROOT 
 			} 
-			syrian_desert_area = { #sinai 
+			365 = { #sinai 
 				owned_by = ROOT 
 			} 
 			4268 = { #aqabah 
@@ -3246,13 +3163,13 @@ Ottoman_Missions_5 = {
 				} 
 				add_permanent_claim = ROOT 
 			} 
-			#algiers_area = { 
-			#	limit = { 
-			#		NOT = { owned_by = ROOT } 
-			#		NOT = { is_core = ROOT } 
-			#	} 
-			#	add_permanent_claim = ROOT 
-			#} 
+			algiers_area = { 
+				limit = { 
+					NOT = { owned_by = ROOT } 
+					NOT = { is_core = ROOT } 
+				} 
+				add_permanent_claim = ROOT 
+			} 
 		} 
 	} 
  
@@ -3305,10 +3222,10 @@ Ottoman_Missions_5 = {
 				type = all 
 				country_or_non_sovereign_subject_holds = ROOT 
 			} 
-			#algiers_area = { 
-			#	type = all 
-			#	country_or_non_sovereign_subject_holds = ROOT 
-			#} 
+			algiers_area = { 
+				type = all 
+				country_or_non_sovereign_subject_holds = ROOT 
+			} 
 		} 
 		effect = { 
 			country_event = { id = ME_Ottoman_Events.21 } 

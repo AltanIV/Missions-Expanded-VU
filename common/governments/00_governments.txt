@@ -3,13 +3,15 @@ monarchy = {
 	reform_levels = {
 		feudalism_vs_autocracy = {
 			reforms = {
-					feudalism_reform
+				feudalism_reform
 				autocracy_reform
 				plutocratic_reform
 				indian_sultanate_reform
 				nayankara_reform
 				misl_confederacy_reform
 				rajput_kingdom
+				negusa_nagast
+				solomonic_empire
 				#Specific:
 				grand_duchy_reform
 				daimyo
@@ -42,6 +44,8 @@ monarchy = {
 				#Start of EU4 Leviathan Dlc additions
 				siamese_absolutism
 				confucian_bureaucracy
+				musa_rule
+				mossi_federal_kingdom
 				#End of EU4 Leviathan Dlc additions
 				#Start of VU Additions
 				welsh_principality
@@ -649,7 +653,7 @@ monarchy = {
 		# ME Reforms:
 		khaganate
 	}
-	
+
 	# Dictatorships etc
 	exclusive_reforms = {
 		military_dictatorship_reform
@@ -671,7 +675,7 @@ monarchy = {
 		revolutionary_empire_reform
 		prussian_monarchy
 		elective_monarchy
-		celestial_empire	
+		celestial_empire
 		#Start of BT additions
 		tanistry_reform
 		anglo_irish_monarchy_reform
@@ -787,7 +791,7 @@ republic = {
 				american_republic
 				federal_republic
 				colonial_government
-					#Start of EU4 Leviathan Dlc additions
+				#Start of EU4 Leviathan Dlc additions
 				crown_colony_government
 				private_enterprise_colony_government
 				self_governing_colony_government
@@ -954,17 +958,6 @@ republic = {
 				penal_colonies_reform
 				citizen_soldiers_reform
 				institutionalized_repbulican_army_reform
-				advanced_bookkeeping_reform_republic
-				advanced_bookkeeping_reform_republic_venice
-				communal_territories_reform
-				united_indian_companies_reform
-				confederation_of_cantons_reform
-				clergical_administration_reform
-				union_of_italian_states_reform
-				volost_colonies_reform
-				island_republic_reform
-				#federalism_reform
-				#supremacy_constitution_reform
 			}
 		}
 		parliamentary_vs_presidential = {
@@ -1001,7 +994,7 @@ republic = {
 				revolutionary_council_reform
 				primacy_legislature_reform
 				judicial_review_reform
-					#GE
+				#GE
 				supreme_court_reform
 				confederation_of_states_reform
 				hansa_domination_reform
@@ -1126,11 +1119,6 @@ republic = {
 		presidential_reform
 	}
 	exclusive_reforms = {
-		pirate_king_reform
-		dutch_republic
-		stadholder_reform
-	}
-	exclusive_reforms = {
 		feuillant_reform
 		military_electorate_reform
 	}
@@ -1162,6 +1150,12 @@ tribal = {
 				stateless_society
 				polynesian_kingdom
 				polynesian_tribe
+				sacred_kingdom
+				tribal_confederacy
+				shaka_regime
+				matrilineal_system
+				feudal_tribe
+				great_man
 				# ME Reforms:
 				incan_society_reform
 				aztec_society_reform
@@ -1199,21 +1193,6 @@ tribal = {
 				children_of_osanobua_reform
 			}
 		}
-		military_organisation = {
-			reforms = {
-				gunpowder_weapons_reform
-				gunpowder_weapons_african_reform 
-				traditionalist_reform
-				traditionalist_african_reform 
-				turkoman_gunners_reform
-				mongol_ties_reform
-				subotai_lessons_reform
-				tatar_raiders_reform
-				african_jungle_warrior_reform 
-				elephant_riders_reform 
-				warrior_kings_reform
-			}
-		}
 		tribal_modernization = {
 			reforms = {
 				centralize_tribal_power_reform
@@ -1234,9 +1213,8 @@ tribal = {
 				tribe_becomes_republic_reform
 				tribe_becomes_theocracy_reform
 				tribe_becomes_horde_reform
-				haudenosaunee_reform
-				recruit_cossacks_reform
-				feudal_vassals_reform
+				tribe_remain_tribal_reform
+				tribe_tribal_unity
 			}
 		}
 	}
@@ -1290,6 +1268,7 @@ native = {
 				native_becomes_monarchy_reform
 				native_becomes_republic_reform
 				native_becomes_theocracy_reform
+				native_remain_being_native_reform
 			}
 		}
 	}
@@ -1314,15 +1293,12 @@ theocracy = {
 				papacy_reform
 				holy_state_reform
 				united_cantons_reform
-				ajuraan_theocracy_reform
-				dynastic_theocracy_reform
 			}
 		}
 		internal_vs_external_mission = {
 			reforms = {
 				internal_mission_reform
 				external_mission_reform
-				colonial_mission_reform
 				mission_to_civilize_reform
 				mission_to_kill_pirates_reform
 				# ME Reforms:
@@ -1336,9 +1312,6 @@ theocracy = {
 				expel_heathens_reform
 				guru_advisors_reform
 				kingdom_of_god_reform
-				the_holy_office_reform
-				teuton_priest
-				fighting_for_israel_reform
 			}
 		}
 		clergy_in_administration = {
@@ -1353,15 +1326,6 @@ theocracy = {
 				warrior_monks_reform
 			}
 		}
-		religious_enforcement = {
-			reforms = {
-				holy_orthodoxy_reform
-				inquisition_reform
-				religious_pragmatism_reform
-				papal_curia_reform
-				ulema_guidance_reform 
-			}
-		}
 		secularization = {
 			reforms = {
 				partial_secularisation_reform
@@ -1371,7 +1335,6 @@ theocracy = {
 				proclaim_republic_reform
 				battle_pope_reform
 				conciliarism_reform
-				restore_the_davidic_line_reform
 			}
 		}
 		separation_of_power_theocracy = {
@@ -1401,44 +1364,6 @@ theocracy = {
 				priestly_autonomy_reform
 				proclaim_religious_head_reform
 				all_under_tengri_reform
-			}
-		}
-		mobilize_the_faithful = {
-			reforms = {
-				holy_war_reform
-				militarized_monasteries_reform
-				brothers_in_arms_reform
-				the_bishops_army_reform
-				permanent_marathas_council_reform
-				governmental_purbias_register_reform
-				teuton_army
-				mamluk_soldiers_reform
-				tradition_of_masada_and_bar_kochba_reform
-				turkoman_gunners_reform
-				mongol_ties_reform
-				subotai_lessons_reform
-			}
-		}
-		diplomacy = {
-			reforms = {
-				unrestricted_diplomacy_reform
-				holy_claims_reform
-				network_of_faithful_allies_reform
-				the_bishops_diplomacy_reform
-				teuton_navy
-				yeshiva_scholarship_reform
-			}
-		}
-		judiciary = {
-			reforms = {
-				secular_law_reform
-				theocratic_law_reform
-				roman_law_reform
-				papal_law_reform
-				jizja_tax_reform
-				harmonious_law_reform
-				pagan_law_reform
-				the_bishops_law_reform
 			}
 		}
 	}

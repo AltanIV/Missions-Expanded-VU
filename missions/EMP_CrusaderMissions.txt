@@ -8,15 +8,17 @@ EMP_crusader_1 = {
 	potential = {
 		has_dlc = "Emperor"
 		OR = {
-			tag = CYP
-			tag = KNI
+			AND = {
+				tag = CYP
+				tag = KNI
+				tag = NAX
+				tag = EPI
+				has_country_flag = use_paradox_missions
+			}
 			tag = ATH
-			tag = NAX
 			tag = KOJ
-			tag = EPI
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 
@@ -45,7 +47,7 @@ EMP_crusader_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			tripoli_area = {
+			syrian_desert_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT	}
 					NOT = { is_core = ROOT	}
@@ -64,7 +66,6 @@ EMP_crusader_1 = {
 				area = palestine_area
 				area = trans_jordan_area
 				area = aleppo_area
-				area = tripoli_area
 			}
 			NOT = { religion = ROOT }
 		}
@@ -82,10 +83,6 @@ EMP_crusader_1 = {
 				religion = ROOT
 			}
 			aleppo_area = {
-				type = all
-				religion = ROOT
-			}
-			tripoli_area = {
 				type = all
 				religion = ROOT
 			}
@@ -109,15 +106,17 @@ EMP_crusader_2 = {
 	potential = {
 		has_dlc = "Emperor"
 		OR = {
-			tag = CYP
-			tag = KNI
+			AND = {
+				tag = CYP
+				tag = KNI
+				tag = NAX
+				tag = EPI
+				has_country_flag = use_paradox_missions
+			}
 			tag = ATH
-			tag = NAX
 			tag = KOJ
-			tag = EPI
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -191,7 +190,7 @@ EMP_crusader_2 = {
 		provinces_to_highlight = {
 			OR = {
 				area = syria_area
-				area = tripoli_area
+				area = syrian_desert_area
 				area = trans_jordan_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -201,7 +200,7 @@ EMP_crusader_2 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			tripoli_area = {
+			syrian_desert_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -241,35 +240,20 @@ EMP_crusader_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			#gulf_of_arabia_area = { # Maybe replace something else. Blocking that for now as I'm not sure what area to put instead
-			#	limit = {
-			#		NOT = { is_permanent_claim = ROOT	}
-			#		NOT = { is_core = ROOT	}
-			#	}
-			#	add_permanent_claim = ROOT
-			#}
+			gulf_of_arabia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
 			said_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT	}
 					NOT = { is_core = ROOT	}
 				}
 				add_permanent_claim = ROOT
-			}
-			syrian_desert_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
-			red_sea_coast_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-					NOT = { is_empty = yes }
-				}
-				add_permanent_claim = ROOT
-			}
+			}			
 		}
 	}
 	EMP_crusader_egypt = {
@@ -278,11 +262,7 @@ EMP_crusader_2 = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					OR = { 
-						region = egypt_region
-						area = syrian_desert_area
-						area = cyrenaica_area
-					}
+					region = egypt_region
 					NOT = {
 						country_or_non_sovereign_subject_holds = ROOT
 					}
@@ -300,12 +280,8 @@ EMP_crusader_2 = {
 			custom_trigger_tooltip = {
 				tooltip = crusader_egypt_tt
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					value = 27
-					OR = { 
-						region = egypt_region
-						area = syrian_desert_area
-						area = cyrenaica_area
-					}
+					value = 15
+					region = egypt_region
 				}
 			}
 			owns_core_province = 358
@@ -326,14 +302,6 @@ EMP_crusader_2 = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT	}
 					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
-			egypt_region = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-					NOT = { is_empty = yes }
 				}
 				add_permanent_claim = ROOT
 			}
@@ -365,15 +333,17 @@ EMP_crusader_3 = {
 	potential = {
 		has_dlc = "Emperor"
 		OR = {
-			tag = CYP
-			tag = KNI
+			AND = {
+				tag = CYP
+				tag = KNI
+				tag = NAX
+				tag = EPI
+				has_country_flag = use_paradox_missions
+			}
 			tag = ATH
-			tag = NAX
 			tag = KOJ
-			tag = EPI
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -415,23 +385,7 @@ EMP_crusader_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			western_aegean_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-					NOT = { owned_by = PAP }
-				}
-				add_permanent_claim = ROOT
-			}
 			aegean_archipelago_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-					NOT = { owned_by = PAP }
-				}
-				add_permanent_claim = ROOT
-			}
-			eastern_mediterrenean_islands_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT	}
 					NOT = { is_core = ROOT	}
@@ -447,66 +401,24 @@ EMP_crusader_3 = {
 		provinces_to_highlight = {
 			OR = {
 				area = morea_area
-				area = western_aegean_area
 				area = aegean_archipelago_area
-				area = eastern_mediterrenean_islands_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = crusader_greece_tt
-					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-						value = 12
-						OR = {
-							area = morea_area
-							area = western_aegean_area
-							area = aegean_archipelago_area
-							area = eastern_mediterrenean_islands_area
-						}
+			custom_trigger_tooltip = {
+				tooltip = crusader_greece_tt
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 5
+					OR = {
+						area = morea_area
+						area = aegean_archipelago_area
 					}
-				}
-				AND = {
-					custom_trigger_tooltip = {
-						tooltip = crusader_greece_tt
-						num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-							value = 6
-							OR = {
-								area = morea_area
-								area = western_aegean_area
-								area = aegean_archipelago_area
-								area = eastern_mediterrenean_islands_area
-							}
-						}
-					}
-					NOT = { exists = BYZ }
 				}
 			}
 		}
 		effect = {
 			northern_greece_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
-			aetolia_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
-			thessaly_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
-			northern_epirus_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT	}
 					NOT = { is_core = ROOT	}
@@ -520,21 +432,7 @@ EMP_crusader_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			eastern_macedonia_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
 			thrace_area = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
-				}
-				add_permanent_claim = ROOT
-			}
-			karasi_area = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT	}
 					NOT = { is_core = ROOT	}
@@ -556,13 +454,8 @@ EMP_crusader_3 = {
 		provinces_to_highlight = {
 			OR = {
 				area = northern_greece_area
-				area = aetolia_area
-				area = thessaly_area
-				area = northern_epirus_area
 				area = macedonia_area
-				area = eastern_macedonia_area
 				area = thrace_area
-				area = karasi_area
 				area = hudavendigar_area
 			}
 			OR = {
@@ -585,31 +478,11 @@ EMP_crusader_3 = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			aetolia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			thessaly_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			northern_epirus_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
 			macedonia_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			eastern_macedonia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
 			thrace_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			karasi_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -689,15 +562,17 @@ EMP_crusader_4 = {
 	potential = {
 		has_dlc = "Emperor"
 		OR = {
-			tag = CYP
-			tag = KNI
+			AND = {
+				tag = CYP
+				tag = KNI
+				tag = NAX
+				tag = EPI
+				has_country_flag = use_paradox_missions
+			}
 			tag = ATH
-			tag = NAX
 			tag = KOJ
-			tag = EPI
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -932,7 +807,7 @@ EMP_crusader_4 = {
 			custom_trigger_tooltip = {
 				tooltip = cruader_piracy_tt
 				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-					value = 15
+					value = 10
 					region = maghreb_region
 					has_port = yes
 				}
@@ -957,15 +832,17 @@ EMP_crusader_5 = {
 	potential = {
 		has_dlc = "Emperor"
 		OR = {
-			tag = CYP
-			tag = KNI
+			AND = {
+				tag = CYP
+				tag = KNI
+				tag = NAX
+				tag = EPI
+				has_country_flag = use_paradox_missions
+			}
 			tag = ATH
-			tag = NAX
 			tag = KOJ
-			tag = EPI
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 		is_random_new_world = no
 	}
 	has_country_shield = yes

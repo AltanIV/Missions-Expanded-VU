@@ -4,15 +4,9 @@ LombardyVenetia_missions_1 = {
 	ai = yes
 	potential = {
 		OR = {
+			tag = LVN
 			tag = MLO
 			tag = VEN
-			AND = {
-				tag = LVN
-				OR = {
-					was_tag = MLO
-					was_tag = VEN
-				}
-			}
 			AND = {
 				tag = ITA
 				OR = {
@@ -26,7 +20,7 @@ LombardyVenetia_missions_1 = {
 						was_tag = TUS
 						was_tag = TTS
 						was_tag = SPI
-						#was_tag = LMN
+						was_tag = LVN
 					}
 				}
 			}
@@ -169,15 +163,9 @@ LombardyVenetia_missions_2 = {
 	ai = yes
 	potential = {
 		OR = {
+			tag = LVN
 			tag = MLO
 			tag = VEN
-			AND = {
-				tag = LVN
-				OR = {
-					was_tag = MLO
-					was_tag = VEN
-				}
-			}
 			AND = {
 				tag = ITA
 				OR = {
@@ -191,7 +179,7 @@ LombardyVenetia_missions_2 = {
 						was_tag = TUS
 						was_tag = TTS
 						was_tag = SPI
-						#was_tag = LMN
+						was_tag = LVN
 					}
 				}
 			}
@@ -381,15 +369,9 @@ LombardyVenetia_missions_3 = {
 	ai = yes
 	potential = {
 		OR = {
+			tag = LVN
 			tag = MLO
 			tag = VEN
-			AND = {
-				tag = LVN
-				OR = {
-					was_tag = MLO
-					was_tag = VEN
-				}
-			}
 			AND = {
 				tag = ITA
 				OR = {
@@ -403,7 +385,7 @@ LombardyVenetia_missions_3 = {
 						was_tag = TUS
 						was_tag = TTS
 						was_tag = SPI
-						#was_tag = LMN
+						was_tag = LVN
 					}
 				}
 			}
@@ -625,7 +607,7 @@ LombardyVenetia_missions_3 = {
 			}
 		}
 		effect = {
-			add_legitimacy_equivalent = { value = 10 }
+			add_legitimacy_equivalent = { amount = 10 republican_tradition = 10 }
 			if = {
 				limit = {
 					OR = {
@@ -715,15 +697,9 @@ LombardyVenetia_missions_4 = {
 	ai = yes
 	potential = {
 		OR = {
+			tag = LVN
 			tag = MLO
 			tag = VEN
-			AND = {
-				tag = LVN
-				OR = {
-					was_tag = MLO
-					was_tag = VEN
-				}
-			}
 			AND = {
 				tag = ITA
 				OR = {
@@ -737,7 +713,7 @@ LombardyVenetia_missions_4 = {
 						was_tag = TUS
 						was_tag = TTS
 						was_tag = SPI
-						#was_tag = LMN
+						was_tag = LVN
 					}
 				}
 			}
@@ -921,15 +897,9 @@ LombardyVenetia_missions_5 = {
 	ai = yes
 	potential = {
 		OR = {
+			tag = LVN
 			tag = MLO
 			tag = VEN
-			AND = {
-				tag = LVN
-				OR = {
-					was_tag = MLO
-					was_tag = VEN
-				}
-			}
 			AND = {
 				tag = ITA
 				OR = {
@@ -943,7 +913,7 @@ LombardyVenetia_missions_5 = {
 						was_tag = TUS
 						was_tag = TTS
 						was_tag = SPI
-						#was_tag = LMN
+						was_tag = LVN
 					}
 				}
 			}

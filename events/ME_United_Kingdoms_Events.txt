@@ -69,13 +69,7 @@ country_event = {
 				accepted_culture = aquitaine 
 				accepted_culture = burgundian 
 				accepted_culture = occitain 
-				accepted_culture = arpitan
-				accepted_culture = poitevin_culture
-				accepted_culture = angevin_culture
-				accepted_culture = lorraine_culture
-				accepted_culture = auvergnat_culture
-				accepted_culture = gallo_culture
-				
+				accepted_culture = wallonian 
 			}
 		}
 		modifier = {
@@ -87,12 +81,7 @@ country_event = {
 				accepted_culture = aquitaine 
 				accepted_culture = burgundian 
 				accepted_culture = occitain 
-				accepted_culture = arpitan
-				accepted_culture = poitevin_culture
-				accepted_culture = angevin_culture
-				accepted_culture = lorraine_culture
-				accepted_culture = auvergnat_culture
-				accepted_culture = gallo_culture
+				accepted_culture = wallonian 
 				amount = 2
 			}
 		}
@@ -105,12 +94,7 @@ country_event = {
 				accepted_culture = aquitaine 
 				accepted_culture = burgundian 
 				accepted_culture = occitain 
-				accepted_culture = arpitan
-				accepted_culture = poitevin_culture
-				accepted_culture = angevin_culture
-				accepted_culture = lorraine_culture
-				accepted_culture = auvergnat_culture
-				accepted_culture = gallo_culture
+				accepted_culture = wallonian 
 				amount = 3
 			}
 		}
@@ -333,13 +317,18 @@ country_event = {
 				}
 				change_culture = cosmopolitan_french_UKS
 			}
-#breton should switch gradualy via different event
-#			every_province = {
-#				limit = {
-#					culture = breton
-#				}
-#				change_culture = breton_UKS 
-#			}
+			every_province = {
+				limit = {
+					culture = breton
+				}
+				change_culture = breton_UKS 
+			}
+			every_province = {
+				limit = {
+					culture = wallonian
+				}
+				change_culture = wallonian_UKS 
+			}
 			every_province = {
 				limit = {
 					culture = occitain
@@ -363,49 +352,6 @@ country_event = {
 					culture = gascon
 				}
 				change_culture = gascon_UKS  
-			}
-#added missing french cultures
-			every_province = {
-				limit = {
-					culture = arpitan
-				}
-				change_culture = arpitan_UKS 
-			}
-			every_province = {
-				limit = {
-					culture = aquitaine
-				}
-				change_culture = aquitaine_UKS  
-			}
-			every_province = {
-				limit = {
-					culture = poitevin_culture
-				}
-				change_culture = poitevin_UKS  
-			}
-			every_province = {
-				limit = {
-					culture = angevin_culture
-				}
-				change_culture = angevin_UKS  
-			}
-			every_province = {
-				limit = {
-					culture = lorraine_culture
-				}
-				change_culture = lorraine_UKS  
-			}
-			every_province = {
-				limit = {
-					culture = auvergnat_culture
-				}
-				change_culture = auvergnat_UKS  
-			}
-			every_province = {
-				limit = {
-					culture = gallo_culture
-				}
-				change_culture = gallo_UKS  
 			}
 		}
 		custom_tooltip = England_tooltip.26
@@ -646,7 +592,7 @@ country_event = {
 		has_country_flag = ENG_Angevin_Missions
 		NOT = { has_country_modifier = UKS_cooldown }
 		any_owned_province = {
-			culture = breton
+			culture = breton_celtic
 		}
 		is_at_war = yes
 	}
@@ -677,7 +623,7 @@ country_event = {
 		
 		random_owned_province = {
 			limit = {
-				culture = breton
+				culture = breton_celtic
 			}
 			spawn_rebels = {
 				type = nationalist_rebels
@@ -704,7 +650,7 @@ province_event = {
 			}
 			has_country_flag = Breton_Intolerance
 			any_owned_province = {
-				culture = breton
+				culture = breton_celtic
 			}
 		}
 	}
@@ -714,7 +660,7 @@ province_event = {
 			owner = {
 				random_owned_province = {
 					limit = {
-						culture = breton
+						culture = breton_celtic
 					}
 					save_event_target_as = ENG_Event_target_1
 				}
@@ -754,7 +700,7 @@ province_event = {
 	picture = CULTURE_eventPicture
 	
 	trigger = {
-		culture = breton
+		culture = breton_celtic
 		owner = {
 			OR = {
 				has_country_flag = Breton_Intolerance
@@ -829,16 +775,15 @@ province_event = {
 		ai_chance = {
 			factor = 1
 		}
-#since intermediary breton(french group) is no longer a thing switch it directly to britsh group
-#		if = {
-#			limit = {
-#				NOT = { has_country_flag = UKS_moving }
-#			}
-#			change_culture = breton
-#		}
-#		else = {
+		if = {
+			limit = {
+				NOT = { has_country_flag = UKS_moving }
+			}
+			change_culture = breton
+		}
+		else = {
 			change_culture = breton_UKS
-#		}
+		}
 	}
 }
 

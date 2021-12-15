@@ -17,7 +17,7 @@ sardinia_missions_1 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -144,7 +144,7 @@ sardinia_missions_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			barbary_coast_area = {
+			algiers_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -300,7 +300,7 @@ sardinia_missions_2 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -461,7 +461,7 @@ sardinia_missions_2 = {
 						if = {
 							limit = {
 								NOT = { owned_by = ROOT }
-								NOT = { is_core = ROOT	}
+								NOT = { is_core = ROOT }
 							}
 							add_permanent_claim = ROOT
 						}
@@ -470,7 +470,7 @@ sardinia_missions_2 = {
 						if = {
 							limit = {
 								NOT = { owned_by = ROOT }
-								NOT = { is_core = ROOT	}
+								NOT = { is_core = ROOT }
 							}
 							add_permanent_claim = ROOT
 						}
@@ -498,14 +498,14 @@ sardinia_missions_2 = {
 					liguria_area = {
 						limit = {
 							NOT = { owned_by = ROOT }
-							NOT = { is_core = ROOT	}
+							NOT = { is_core = ROOT }
 						}
 						add_permanent_claim = ROOT
 					}
 					baleares_area = {
 						limit = {
 							NOT = { owned_by = ROOT }
-							NOT = { is_core = ROOT	}
+							NOT = { is_core = ROOT }
 						}
 						add_permanent_claim = ROOT
 					}
@@ -529,14 +529,21 @@ sardinia_missions_2 = {
 			sicily_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT	}
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
 			baleares_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT	}
+					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
@@ -544,7 +551,7 @@ sardinia_missions_2 = {
 				if = {
 					limit = {
 						NOT = { owned_by = ROOT }
-						NOT = { is_core = ROOT	}
+						NOT = { is_core = ROOT }
 					}
 					add_permanent_claim = ROOT
 				}
@@ -559,9 +566,12 @@ sardinia_missions_2 = {
 			sar_naval_preparation
 		}
 		provinces_to_highlight = {
-			AND = {
-				area = sicily_area
-				NOT = { province_id = 126 }
+			OR = {
+				AND = {
+					area = sicily_area
+					NOT = { province_id = 126 }
+				}
+				area = western_sicily_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -573,12 +583,22 @@ sardinia_missions_2 = {
 					country_or_non_sovereign_subject_holds = ROOT
 				}
 			}
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
 			sicily_area = {
 				limit = {
 					country_or_non_sovereign_subject_holds = ROOT
 				}
+				add_province_modifier = {
+					name = sar_beauty_sicily
+					duration = 9125
+				}
+			}
+			western_sicily_area = {
 				add_province_modifier = {
 					name = sar_beauty_sicily
 					duration = 9125
@@ -634,7 +654,7 @@ sardinia_missions_3 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -812,7 +832,7 @@ sardinia_missions_4 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -1020,7 +1040,7 @@ sardinia_missions_5 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}

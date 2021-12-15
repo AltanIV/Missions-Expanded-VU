@@ -52,7 +52,7 @@ THU_missions_1 = {
 			}
 		}
 		effect = {
-			saxony_area = {
+			south_saxony_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -75,13 +75,13 @@ THU_missions_1 = {
 		required_missions = { thuringia_conquer_home_area }
 		provinces_to_highlight = {
 			OR = {
-				area = saxony_area
+				area = south_saxony_area
 				area = erzgebirge_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			saxony_area = {
+			south_saxony_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -123,7 +123,7 @@ THU_missions_1 = {
 			}
 		}
 		effect = {
-			altmark_area = { #Northern Saxony
+			northern_saxony_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -138,11 +138,11 @@ THU_missions_1 = {
 		position = 9
 		required_missions = { thuringia_conquer_mittelmark }
 		provinces_to_highlight = {
-			area = altmark_area
+			area = northern_saxony_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			altmark_area = {
+			northern_saxony_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -189,7 +189,7 @@ THU_missions_1 = {
 		}
 		effect = {
 			add_prestige = 20
-			add_legitimacy_equivalent = { value = 10 }
+			add_legitimacy_equivalent = { amount = 10 republican_tradition = 10 }
 			add_adm_power = 100
 			add_dip_power = 100
 			add_mil_power = 100

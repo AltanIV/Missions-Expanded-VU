@@ -109,7 +109,7 @@ mnd_khmer_2 = {
 		}
 	}
 	mnd_khm_resurgence = {
-		icon = mission_mnd_khm_resurgence
+		icon = mission_mnd_maj_end_disaster
 		required_missions = { mnd_khm_religion mnd_khm_restore_angkor mnd_khm_rebuild }
 		provinces_to_highlight = {
 		}
@@ -145,7 +145,7 @@ mnd_khmer_2 = {
 		}
 	}
 	mnd_khm_golden_age = {
-		icon = mission_mnd_khm_restored_empire
+		icon = mission_mnd_siam_subjugate_vietnam
 		required_missions = { mnd_khm_resurgence }
 		provinces_to_highlight = {
 			region = indo_china_region
@@ -215,13 +215,13 @@ mnd_khmer_3 = {
 	has_country_shield = yes
 	
 	mnd_khm_rebuild = {
-		icon = mission_mnd_khm_city_of_temples
+		icon = mission_mnd_maj_prepare_eastern_campaigns
 		required_missions = {  }
 		provinces_to_highlight = {
 			OR = {
 				area = cambodia_area
 				area = mekong_area
-				area = cambodia_area
+				area = angkor_area
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -239,7 +239,7 @@ mnd_khmer_3 = {
 				owned_by = ROOT
 				development = 10
 			}
-			cambodia_area = {
+			angkor_area = {
 				type = all
 				owned_by = ROOT
 				development = 10
@@ -426,7 +426,7 @@ mnd_khmer_3 = {
 		icon = mission_mnd_maj_rein_in_brunei
 		required_missions = { mnd_khm_subjugate_dia_viet }
 		provinces_to_highlight = {
-			area = kalimantan_area
+			area = banjar_area
 			area = brunei_area
 			area = kalimantan_area
 			area = kutai_area
@@ -439,7 +439,7 @@ mnd_khmer_3 = {
 				all_province = {
 					culture = bornean
 					OR = {
-						area = kalimantan_area
+						area = banjar_area
 						area = brunei_area
 						area = kalimantan_area
 						area = kutai_area
@@ -621,14 +621,14 @@ mnd_khmer_5 = {
 	has_country_shield = yes
 
 	mnd_khm_reclaim_the_north = {
-		icon = mission_mnd_khm_resurgence
+		icon = mission_mnd_maj_subjugate_makassar
 		required_missions = {  }
 		provinces_to_highlight = {
-			area = south_laos_area
+			area = champasak_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			south_laos_area = {
+			champasak_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -660,7 +660,7 @@ mnd_khmer_5 = {
 					}
 					add_permanent_claim = ROOT
 				}
-				khorat_area = {
+				vientiane_area = {
 					limit = {
 						NOT = { is_core = ROOT }
 						NOT = { is_permanent_claim = ROOT }
@@ -676,8 +676,8 @@ mnd_khmer_5 = {
 		provinces_to_highlight = {
 			OR = {
 				area = north_laos_area
-				area = south_laos_area
-				area = khorat_area
+				area = champasak_area
+				area = vientiane_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -688,8 +688,8 @@ mnd_khmer_5 = {
 					OR = {
 						area = south_laos_area
 						area = north_laos_area
-						area = south_laos_area
-						area = khorat_area
+						area = champasak_area
+						area = vientiane_area
 					}
 					country_or_non_sovereign_subject_holds = ROOT
 				}
@@ -775,7 +775,7 @@ mnd_khmer_5 = {
 		}
 	}
 	mnd_khm_invade_burma = {
-		icon = mission_mnd_khm_resurgence
+		icon = mission_unite_home_region
 		required_missions = { mnd_khm_restored_empire }
 		provinces_to_highlight = {
 			region = burma_region

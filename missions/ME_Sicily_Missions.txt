@@ -17,7 +17,7 @@ sicily_mission_1 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -78,6 +78,11 @@ sicily_mission_1 = {
 				NOT = { unrest = 3 }
 				NOT = { province_id = 126 }
 			}
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				NOT = { unrest = 3 }
+			}
 		}
 		effect = {
 			if = {
@@ -92,6 +97,24 @@ sicily_mission_1 = {
 				add_casus_belli = {
 					target = ARA
 					type = cb_restore_personal_union
+				}
+			}
+			western_sicily_area = {
+				if = {
+					limit = { has_dlc = "Mandate of Heaven" }
+					add_prosperity = 50
+					add_devastation = -25
+				}
+				else = {
+					add_devastation = -10
+				}
+				add_province_modifier = {
+					name = nap_legacy_ruggero
+					duration = -1
+				}
+				add_province_modifier = {
+					name = nap_beauty_of_sicily
+					duration = -1
 				}
 			}
 			sicily_area = {
@@ -238,7 +261,7 @@ sicily_mission_2 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -469,7 +492,7 @@ sicily_mission_3 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -534,6 +557,7 @@ sicily_mission_3 = {
 			else = { stability = 1 }
 		}
 		effect = {
+			add_yearly_manpower = 1
 			add_country_modifier = {
 				name = nap_struggle_anew
 				duration = 3650
@@ -602,6 +626,31 @@ sicily_mission_3 = {
 					NOT = { is_permanent_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
+			}
+			tunisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2452 = {
+				if = {
+					limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+				}
+			}
+			354 = {
+				if = {
+					limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+				}
 			}
 		}
 	}
@@ -781,6 +830,7 @@ sicily_mission_3 = {
 				area = apulia_area
 				area = naples_area
 				area = calabria_area
+				area = western_sicily_area
 				area = sicily_area
 			}
 		}
@@ -858,6 +908,19 @@ sicily_mission_3 = {
 					}
 				}
 			}
+			western_sicily_area = {
+				type = all
+				owned_by = ROOT
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					prosperity = 50
+				}
+				else = {
+					NOT = { devastation = 1 }
+				}
+			}
 			sicily_area = {
 				type = all
 				owned_by = ROOT
@@ -900,7 +963,7 @@ sicily_mission_4 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -1113,7 +1176,7 @@ sicily_mission_5 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -1198,6 +1261,13 @@ sicily_mission_5 = {
 					name = sic_parramentu_sicilianu_modifier
 					duration = -1
 				}
+			}
+			western_sicily_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
 			sicily_area = {
 				limit = {

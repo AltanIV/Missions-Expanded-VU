@@ -1144,8 +1144,16 @@ italy_missions_3 = {
 			mfa_new_empire
 			italian_minor_conquest_of_rome
 		}
+		provinces_to_highlight = {
+			province_id = 118
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
 		position = 14
 		trigger = {
+			owns_core_province = 118
 			NOT = { war_exhaustion = 1 }
 			is_at_war = no
 			stability = 0
@@ -1171,6 +1179,17 @@ italy_missions_3 = {
 					duration = 18250
 				}
 				custom_tooltip = italy_italian_hegemony_nASE_tt
+			}
+			if = {
+				limit = {
+					is_expanded_mod_active = { mod = great_monuments }
+				}
+				118 = {
+					add_great_project_tier = {
+						type = gme_rome_altare_patria
+						tier = 1
+					}
+				}
 			}
 		}
 	}
@@ -1321,15 +1340,15 @@ italy_missions_3 = {
 					}
 				}
 			}
-			#algiers_area = {
-			#	limit = {
-			#		has_port = yes
-			#		NOT = { owned_by = ROOT }
-			#		NOT = { is_core = ROOT }
-			#	}
-			#	add_permanent_claim = ROOT
-			#}
-			barbary_coast_area = { #Algiers
+			algiers_area = {
+				limit = {
+					has_port = yes
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			barbary_coast_area = {
 				limit = {
 					has_port = yes
 					NOT = { owned_by = ROOT }
@@ -1361,25 +1380,28 @@ italy_missions_3 = {
 				area = upper_andalucia_area
 				area = toledo_area
 				area = northern_morocco_area
-				#area = algiers_area
+				area = algiers_area
 				area = barbary_coast_area
 			}
 			has_port = yes
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 50
-				OR = {
-					any_trade_node_member_province = { province_id = 341 }
-					any_trade_node_member_province = { province_id = 1295 }
-					any_trade_node_member_province = { province_id = 1298 }
-					area = lower_andalucia_area
-					area = upper_andalucia_area
-					area = toledo_area
-					area = northern_morocco_area
-					#area = algiers_area
-					area = barbary_coast_area
+			custom_trigger_tooltip = {
+				tooltip = ITA_WESTERN_MEDITERRANEAN_TT
+				num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+					value = 50
+					OR = {
+						any_trade_node_member_province = { province_id = 341 }
+						any_trade_node_member_province = { province_id = 1295 }
+						any_trade_node_member_province = { province_id = 1298 }
+						area = lower_andalucia_area
+						area = upper_andalucia_area
+						area = toledo_area
+						area = northern_morocco_area
+						area = algiers_area
+						area = barbary_coast_area
+					}
 				}
 			}
 		}
@@ -2053,6 +2075,7 @@ italy_missions_4 = {
 			OR = {
 				area = corsica_sardinia_area
 				area = sicily_area
+				area = western_sicily_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -2062,6 +2085,10 @@ italy_missions_4 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_sicily_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -2111,7 +2138,7 @@ italy_missions_4 = {
 						add_permanent_claim = ROOT
 					}
 				}
-				1309 = {
+				137 = {
 					every_trade_node_member_province = {
 						limit = {
 							has_port = yes
@@ -2192,7 +2219,7 @@ italy_missions_4 = {
 				}
 				area = upper_andalucia_area
 				area = toledo_area
-				#area = algiers_area
+				area = algiers_area
 				area = barbary_coast_area
 				area = cyrenaica_area
 				area = delta_area
@@ -2245,7 +2272,7 @@ italy_missions_4 = {
 						}
 					}
 				}
-				1309 = { #ragusa
+				137 = { #ragusa
 					all_trade_node_member_province = {
 						OR = {
 							has_port = no
@@ -2279,14 +2306,14 @@ italy_missions_4 = {
 						country_or_non_sovereign_subject_holds = ROOT
 					}
 				}
-				#algiers_area = {
-				#	type = all
-				#	OR = {
-				#		has_port = no
-				#		NOT = { province_has_center_of_trade_of_level = 1 }
-				#		owned_by = ROOT
-				#	}
-				#}
+				algiers_area = {
+					type = all
+					OR = {
+						has_port = no
+						NOT = { province_has_center_of_trade_of_level = 1 }
+						owned_by = ROOT
+					}
+				}
 				barbary_coast_area = {
 					type = all
 					OR = {
@@ -2692,7 +2719,7 @@ italy_missions_5 = {
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = ITA_blooded_shores_TT
-				1309 = { #Ragusa
+				137 = {
 					all_trade_node_member_province = {
 						OR = {
 							has_port = no
@@ -2880,6 +2907,7 @@ italy_missions_5 = {
 				area = naples_area
 				area = calabria_area
 				area = apulia_area
+				area = western_sicily_area
 				area = sicily_area
 			}
 			OR = {
@@ -2909,6 +2937,13 @@ italy_missions_5 = {
 				NOT = { nationalism = 1 }
 			}
 			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				NOT = { devastation = 1 }
+				NOT = { unrest = 1 }
+				NOT = { nationalism = 1 }
+			}
+			western_sicily_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 				NOT = { devastation = 1 }
@@ -2951,6 +2986,19 @@ italy_missions_5 = {
 				}
 			}
 			apulia_area = {
+				if = {
+					limit = {
+						has_dlc = "Mandate of Heaven"
+					}
+					add_prosperity = 15
+				}
+				else = {
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+			western_sicily_area = {
 				if = {
 					limit = {
 						has_dlc = "Mandate of Heaven"
@@ -2991,6 +3039,7 @@ italy_missions_5 = {
 				area = naples_area
 				area = calabria_area
 				area = apulia_area
+				area = western_sicily_area
 				area = sicily_area
 				area = corsica_sardinia_area
 			}
@@ -3007,6 +3056,7 @@ italy_missions_5 = {
 					area = naples_area
 					area = calabria_area
 					area = apulia_area
+					area = western_sicily_area
 					area = sicily_area
 					area = corsica_sardinia_area
 				}
@@ -3028,6 +3078,13 @@ italy_missions_5 = {
 				}
 			}
 			apulia_area = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				add_permanent_province_modifier = {
+					name = ita_southern_focus
+					duration = 9125
+				}
+			}
+			western_sicily_area = {
 				limit = { country_or_non_sovereign_subject_holds = ROOT }
 				add_permanent_province_modifier = {
 					name = ita_southern_focus
@@ -3144,14 +3201,14 @@ italy_missions_5 = {
 					duration = -1
 				}
 			}
-			#western_sicily_area = { #Removed from VU
-			#	limit = { country_or_non_sovereign_subject_holds = ROOT }
-			#	remove_province_modifier = ita_italian_prosperity_1
-			#	add_permanent_province_modifier = {
-			#		name = ita_italian_prosperity_final
-			#		duration = -1
-			#	}
-			#}
+			western_sicily_area = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				remove_province_modifier = ita_italian_prosperity_1
+				add_permanent_province_modifier = {
+					name = ita_italian_prosperity_final
+					duration = -1
+				}
+			}
 			sicily_area = {
 				limit = { country_or_non_sovereign_subject_holds = ROOT }
 				remove_province_modifier = ita_italian_prosperity_1

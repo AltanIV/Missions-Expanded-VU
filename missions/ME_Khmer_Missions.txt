@@ -18,7 +18,7 @@ KHM_missions_1 = {
 		provinces_to_highlight = {
 			OR = {
 				area = champa_area
-				area = degar_highlands_area
+				area = tay_nguyen_area
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -36,7 +36,7 @@ KHM_missions_1 = {
 				owned_by = ROOT
 				development = 12
 			}
-			degar_highlands_area = {
+			tay_nguyen_area = {
 				type = all
 				owned_by = ROOT
 				development = 12
@@ -108,7 +108,7 @@ KHM_missions_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			degar_highlands_area= {
+			tay_nguyen_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -127,7 +127,7 @@ KHM_missions_2 = {
 		provinces_to_highlight = {
 			OR = {
 				area = champa_area
-				area = degar_highlands_area
+				area = tay_nguyen_area
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -136,7 +136,7 @@ KHM_missions_2 = {
 				type = all
 				owned_by = ROOT
 			}
-			degar_highlands_area = {
+			tay_nguyen_area = {
 				type = all
 				owned_by = ROOT
 			}
@@ -348,7 +348,7 @@ KHM_missions_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			sukothai_area = {
+			sukhothai_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
@@ -362,13 +362,29 @@ KHM_missions_3 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			prachin_area = {
+			champasak_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
+			}
+			vientiane_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
 				}
+				add_permanent_claim = ROOT
+			}
+			612 = {
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
 		}
 	}
 	
@@ -381,8 +397,8 @@ KHM_missions_3 = {
 				area = north_tenasserim_area
 				area = central_thai_area
 				area = tenasserim_area
-				area = sukothai_area
-				area = prachin_area
+				area = sukhothai_area
+				province_id = 612
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -399,12 +415,11 @@ KHM_missions_3 = {
 				type = all
 				owned_by = ROOT
 			}
-			sukothai_area = {
+			sukhothai_area = {
 				type = all
 				owned_by = ROOT
 			}
-			prachin_area = {
-				type = all
+			612 = {
 				owned_by = ROOT
 			} 
 		}
@@ -538,6 +553,8 @@ KHM_missions_4 = {
 				area = south_laos_area
 				area = north_laos_area
 				area = khorat_area
+				area = champasak_area
+				area = vientiane_area
 			}
 			NOT = { owned_by = ROOT }
 		}
@@ -551,6 +568,14 @@ KHM_missions_4 = {
 				owned_by = ROOT
 			}
 			khorat_area = {
+				type = all
+				owned_by = ROOT
+			}
+			champasak_area = {
+				type = all
+				owned_by = ROOT
+			}
+			vientiane_area = {
 				type = all
 				owned_by = ROOT
 			}

@@ -1,9 +1,10 @@
-# Priority is to have a working tree, more tinkering may be needed
+
 franconia_conquest_group_1 = {
 	slot = 1
 	generic = no
 	ai = yes
 	potential = {
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = WBG
 			tag = ANS
@@ -14,7 +15,6 @@ franconia_conquest_group_1 = {
 			tag = FKN
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -23,7 +23,10 @@ franconia_conquest_group_1 = {
 		required_missions = { }
 
 		provinces_to_highlight = {
-			area = franconia_area
+			OR = {
+				area = franconia_area
+				area = upper_franconia_area
+			}
 			OR = {
 				NOT = { owned_by = root }
 				NOT = { is_core = root }
@@ -32,7 +35,10 @@ franconia_conquest_group_1 = {
 				NOT = {
 					num_of_owned_provinces_with = {
 						value = 4
-						area = franconia_area
+						OR = {
+							area = franconia_area
+							area = upper_franconia_area
+						}
 						is_core = root
 					}
 				}
@@ -42,13 +48,23 @@ franconia_conquest_group_1 = {
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 4
-				area = franconia_area
+				OR = {
+					area = franconia_area
+					area = upper_franconia_area
+				}
 				is_core = root
 			}
 		}
 		
 		effect = {
 			franconia_area = {
+				limit = {
+					NOT = { owned_by = root }
+					NOT = { is_permanent_claim = root }
+				}
+				add_permanent_claim = root
+			}
+			upper_franconia_area = {
 				limit = {
 					NOT = { owned_by = root }
 					NOT = { is_permanent_claim = root }
@@ -62,12 +78,19 @@ franconia_conquest_group_1 = {
 		required_missions = { fkn_defeat_rivals }
 
 		provinces_to_highlight = {
-			area = franconia_area
+			OR = {
+				area = franconia_area
+				area = upper_franconia_area
+			}
 			NOT = { owner = { primary_culture = franconian } }
 		}
 		
 		trigger = {
 			franconia_area = {
+				type = all
+				owner = { primary_culture = franconian }
+			}
+			upper_franconia_area = {
 				type = all
 				owner = { primary_culture = franconian }
 			}
@@ -159,7 +182,21 @@ franconia_conquest_group_1 = {
 				duration = 7300
 			}
 
-			bavaria_area = {
+			upper_bavaria_area = {
+				limit = {
+					NOT = { owned_by = root }
+					NOT = { is_permanent_claim = root }
+				}
+				add_permanent_claim = root
+			}
+			lower_bavaria_area = {
+				limit = {
+					NOT = { owned_by = root }
+					NOT = { is_permanent_claim = root }
+				}
+				add_permanent_claim = root
+			}
+			east_bavaria_area = {
 				limit = {
 					NOT = { owned_by = root }
 					NOT = { is_permanent_claim = root }
@@ -174,7 +211,9 @@ franconia_conquest_group_1 = {
 						owned_by = UBV
 						owned_by = BAV
 					}
-					NOT = { area = bavaria_area }
+					NOT = { area = upper_bavaria_area }
+					NOT = { area = lower_bavaria_area }
+					NOT = { area = east_bavaria_area }
 					NOT = { is_claim = root }
 					NOT = { country_or_non_sovereign_subject_holds = root }
 				}
@@ -189,13 +228,21 @@ franconia_conquest_group_1 = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					area = bavaria_area
+					OR = {
+						area = upper_bavaria_area
+						area = lower_bavaria_area
+						area = east_bavaria_area
+					}
 					NOT = { country_or_non_sovereign_subject_holds = root }
 					ROOT = {
 						NOT = {
 							num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 								value = 8
-								area = bavaria_area
+								OR = {
+									area = upper_bavaria_area
+									area = lower_bavaria_area
+									area = east_bavaria_area
+								}
 							}
 						}
 					}
@@ -259,7 +306,11 @@ franconia_conquest_group_1 = {
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				value = 8
-				area = bavaria_area
+				OR = {
+					area = upper_bavaria_area
+					area = lower_bavaria_area
+					area = east_bavaria_area
+				}
 			}
 		}
 		
@@ -303,9 +354,9 @@ franconia_conquest_group_2 = {
 	generic = no
 	ai = yes
 	potential = {
+		has_country_flag = use_paradox_missions
 		tag = FKN
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -376,6 +427,7 @@ franconia_splendour_group = {
 	generic = no
 	ai = yes
 	potential = {
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = WBG
 			tag = ANS
@@ -386,7 +438,6 @@ franconia_splendour_group = {
 			tag = FKN
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	
@@ -524,13 +575,13 @@ franconia_splendour_group_2 = {
 	generic = no
 	ai = yes
 	potential = {
+		has_country_flag = use_paradox_missions
 		OR = {
 			tag = FKN
 			tag = ANS
 			tag = BYT
 		}
 		NOT = { map_setup = map_setup_random }
-		has_country_flag = use_paradox_missions
 	}
 	has_country_shield = yes
 	

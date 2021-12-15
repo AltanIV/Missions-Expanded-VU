@@ -17,7 +17,7 @@ me_venice_missions_1 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -522,7 +522,7 @@ me_venice_missions_2 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -549,7 +549,7 @@ me_venice_missions_2 = {
 			}
 		}
 		effect = {
-			add_legitimacy_equivalent = { value = 3 }
+			add_legitimacy_equivalent = { amount = 3 republican_tradition = 3 }
 			east_adriatic_coast_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
@@ -804,7 +804,7 @@ me_venice_missions_3 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -907,7 +907,7 @@ me_venice_missions_3 = {
 		}
 		effect = {
 			add_mercantilism = 5
-			add_republican_tradition = 3
+			add_legitimacy_equivalent = { amount = 5 republican_tradition = 3 }
 			add_ruler_modifier = {
 				name = ven_victory_gen
 				duration = -1
@@ -1278,7 +1278,7 @@ me_venice_missions_4 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -1381,21 +1381,21 @@ me_venice_missions_4 = {
 			aegean_archipelago_area = {
 				limit = {
 					NOT = { owned_by = ROOT	}
-					NOT = { is_core = ROOT	}
+					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
 			morea_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT	}
+					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
 			northern_greece_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT	}
+					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
@@ -1451,22 +1451,22 @@ me_venice_missions_4 = {
 			}
 			northern_greece_area = {
 				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
 			macedonia_area = {
 				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
 			thrace_area = {
 				limit = {
-					NOT = { is_permanent_claim = ROOT	}
-					NOT = { is_core = ROOT	}
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
@@ -1636,7 +1636,7 @@ me_venice_missions_5 = {
 								was_tag = TUS
 								was_tag = TTS
 								was_tag = SPI
-								#was_tag = LMN
+								was_tag = LVN
 							}
 						}
 					}
@@ -1829,7 +1829,7 @@ me_venice_missions_5 = {
 				limit = {
 					NOT = { alliance_with = MAM }
 				}
-				vostani_area = {
+				gulf_of_arabia_area = {
 					limit = {
 						NOT = { owned_by = ROOT }
 						NOT = { is_core = ROOT }
@@ -1872,7 +1872,7 @@ me_venice_missions_5 = {
 		provinces_to_highlight = {
 			OR = {
 				AND = {
-					area = vostani_area
+					area = gulf_of_arabia_area
 					NOT = { country_or_non_sovereign_subject_holds = ROOT }
 					ROOT = { NOT = { alliance_with = MAM } }
 				}
@@ -1886,7 +1886,7 @@ me_venice_missions_5 = {
 		trigger = {
 			if = {
 				limit = { NOT = { alliance_with = MAM } }
-				vostani_area = {
+				gulf_of_arabia_area = {
 					type = all
 					country_or_non_sovereign_subject_holds = ROOT
 				}

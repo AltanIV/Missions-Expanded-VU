@@ -213,10 +213,8 @@ SWE_missions_2 = {
 		position = 3
 		provinces_to_highlight = {
 			OR = {
-				area = karelia_area
-				area = west_karelia_area
-				area = laponia_area
-				area = north_karelia_area
+				province_id = 33
+				province_id = 34
 			}
 			OR = {
 				NOT = { owned_by = ROOT }
@@ -224,22 +222,8 @@ SWE_missions_2 = {
 			}
 		}
 		trigger = {
-			karelia_area = {
-				type = all
-				is_core = ROOT
-			}
-			west_karelia_area = {
-				type = all
-				is_core = ROOT
-			}
-			north_karelia_area = {
-				type = all
-				is_core = ROOT
-			}
-			laponia_area = {
-				type = all
-				is_core = ROOT
-			}
+			owns_core_province = 33
+			owns_core_province = 34
 		}
 		effect = {
 			33 = {
@@ -379,7 +363,7 @@ SWE_missions_2 = {
 		position = 8
 		provinces_to_highlight = {
 			OR = {
-				area = svealand_area
+				area = ostra_svealand_area
 				area = gotaland_area
 			}
 			OR = {
@@ -398,9 +382,9 @@ SWE_missions_2 = {
 							NOT = { development = 20 }
 							OR = {
 								AND = {
-									area = svealand_area
+									area = ostra_svealand_area
 									NOT = {
-										svealand_area = {
+										ostra_svealand_area = {
 											development = 20
 										}
 									}
@@ -426,7 +410,7 @@ SWE_missions_2 = {
 					share = 80
 				}
 			}
-			svealand_area = {
+			ostra_svealand_area = {
 				type = all
 				owned_by = ROOT
 				is_state = yes
@@ -440,7 +424,7 @@ SWE_missions_2 = {
 				limit = {
 					has_dlc = "Mandate of Heaven"
 				}
-				svealand_area = {
+				ostra_svealand_area = {
 					type = all
 					custom_trigger_tooltip = {
 						tooltip = IS_PROSPEROUS
@@ -464,10 +448,10 @@ SWE_missions_2 = {
 				}
 			}
 			else = {
-				svealand_area = {
+				ostra_svealand_area = {
 					development = 20
 				}
-				svealand_area = {
+				ostra_svealand_area = {
 					type = all
 					NOT = { devastation = 1 }
 					NOT = { unrest = 1 }
@@ -551,12 +535,12 @@ SWE_missions_3 = {
 			owns = 1
 		}
 		effect = {
-			add_legitimacy_equivalent = { value = 30 }
+			add_legitimacy_equivalent = { amount = 30 republican_tradition = 30 }
 			add_ruler_modifier = {
 				name = sweden_ending_the_kalmar_union_modifier
 				duration = -1
 			}
-			25 = {
+			33 = {
 				if = {
 					limit = {
 						NOT = { owned_by = ROOT }
@@ -565,33 +549,14 @@ SWE_missions_3 = {
 					add_permanent_claim = ROOT
 				}
 			}
-			west_karelia_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
+			34 = {
+				if = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
-			}
-			north_karelia_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			laponia_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			karelia_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
-				add_permanent_claim = ROOT
 			}
 		}
 	}
